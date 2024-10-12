@@ -1,5 +1,9 @@
 import http from 'http'
+import dotenv from 'dotenv'
 import fs from 'fs'
+
+const PORT = process.env.PORT
+
 
 const server = http.createServer((req, res) => {
 
@@ -38,4 +42,4 @@ const server = http.createServer((req, res) => {
     } catch(error) {
         
     }
-}).listen(8000)
+}).listen(PORT)
