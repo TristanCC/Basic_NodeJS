@@ -6,7 +6,7 @@ const PORT = process.env.PORT
 
 
 const server = http.createServer((req, res) => {
-
+    
     try {
         if(req.url === '/') {
             fs.readFile('index.html', (err, data) => {
@@ -42,4 +42,6 @@ const server = http.createServer((req, res) => {
     } catch(error) {
         
     }
-}).listen(PORT)
+}).listen(PORT, () => {
+    console.log(`Server hosted on localhost:${PORT}`)
+})
